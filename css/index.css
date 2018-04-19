@@ -1,0 +1,21 @@
+.page_title {
+    text-align: center;
+    font-size: 34px;
+    color: #3cc51f;
+    font-weight: 400;
+    margin: 0 15%;
+}
+.page_desc {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+.hd {
+    padding:2em;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
