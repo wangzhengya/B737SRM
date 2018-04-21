@@ -13,16 +13,29 @@
         <h2 class="page_title">水平安定面</h1>
         <p class="page_desc">允许损伤标准</p>
     </div>
-    <div class="cell_title">是否在翼肋上</div>
-    <div class="weui-flex">
-        <div class="weui-flex_item btn-select"><a href="javascript:;" class="weui-btn weui-btn_plain-primary">翼肋上</a></div>
-        <div class="weui-flex_item btn-select"><a href="javascript:;" class="weui-btn weui-btn_plain-default">不在翼肋上</a></div> 
-    </div>
+    <div class="cell_title">翼肋上</div>
+    <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">是否在翼肋上</div>
+            <div class="weui-cell__ft">
+                <label for="switchCP" class="weui-switch-cp">
+                    <input id="switchCP" class="weui-switch-cp__input" type="checkbox">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
     <div class="cell_desc">标准：在翼肋上或者距离铆钉孔小于1inch</div>
-    <div class="cell_title">翼肋和梁搭接处</div>
-    <div class="weui-flex">
-        <div class="weui-flex_item btn-select"><a href="javascript:;" class="weui-btn weui-btn_plain-default">翼肋和梁搭接处</a></div>
-        <div class="weui-flex_item btn-select"><a href="javascript:;" class="weui-btn weui-btn_plain-default">翼肋和蒙皮搭接处</a></div> 
+
+    <div class="cell_title">侧向位置</div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select">
+            <div class="weui-cell__bd">
+                <select class="weui-select" name="select1">
+                    <option selected="" value="0">请选择</option>
+                    <option value="1">翼肋和梁搭接处</option>
+                    <option value="2">翼肋和蒙皮搭接处</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="cell_desc">参考：</div>
     <img src="./images/stablizer/stab-1.png" width="400px" alt="">
@@ -60,15 +73,30 @@
     <img src="./images/stablizer/stab-2.png" width="400px" alt="">
 
     <div class="cell_title">其他条件：</div>
-    <label for="weuiAgree" class="weui-agree">
-        <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
-        <span class="weui-agree__text">
-            铆钉无拉伸、变形、缺失，无尖锐折痕、沟槽
-        </span>
-    </label>
+    <div class="weui-cells weui-cells_form">
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">铆钉无拉伸、变形、缺失</div>
+            <div class="weui-cell__ft">
+                <input class="weui-switch" type="checkbox">
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">无尖锐折痕、沟槽</div>
+            <div class="weui-cell__ft">
+                <label for="switchCP" class="weui-switch-cp">
+                    <input id="switchCP" class="weui-switch-cp__input" type="checkbox">
+                    <div class="weui-switch-cp__box"></div>
+                </label>
+            </div>
+        </div>
+    </div>
 
     <div class="weui-btn-area">
         <a class="weui-btn weui-btn_primary" href="javascript:" id="confirm">确定</a>
+    </div>
+
+    <div class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+        <span class="weui-loadmore__tips"></span>
     </div>
 
     <div class="">
