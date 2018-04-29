@@ -38,3 +38,7 @@
     color:#428bca;
     font-size: 14px;
 }
+.weui-form-preview {
+    position: relative;
+    background-color: #FFFFFF;
+}
