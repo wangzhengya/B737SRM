@@ -28,14 +28,14 @@ $(function(){
 
         if($selectPlace == 1){//翼肋和梁搭接处<
             console.log("翼肋和梁搭接处\n宽度："+$width+"深度："+$depth);
-            if($depth < 0.02 && ($width/$depth)>=30 && $noPulled && $noCracks){
+            if($depth <= 0.02 && ($width/$depth)>=30 && $noPulled && $noCracks){
                 $successDialog.fadeIn(200);
             }else{
                 $failDialog.fadeIn(200);
             }
         }else if($selectPlace == 2){//翼肋和蒙皮搭接处
             console.log("翼肋和蒙皮搭接处\n宽度："+$width+"深度："+$depth);
-            if($depth < 0.03 && ($width/$depth)>=30 && $noPulled && $noCracks){
+            if($depth <= 0.03 && ($width/$depth)>=30 && $noPulled && $noCracks){
                 $successDialog.fadeIn(200);
             }else{
                 $failDialog.fadeIn(200);

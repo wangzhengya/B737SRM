@@ -13,41 +13,32 @@
         <h2 class="page_title">水平安定面</h1>
         <p class="page_desc">允许损伤标准</p>
     </div>
-    <div class="cell_title">翼肋上</div>
-    <div class="weui-cell weui-cell_switch">
-            <div class="weui-cell__bd">是否在翼肋上</div>
-            <div class="weui-cell__ft">
-                <input class="weui-switch" type="checkbox">
-            </div>
-        </div>
-    <div class="cell_desc">标准：在翼肋上或者距离铆钉孔小于1inch</div>
 
-    <div class="cell_title">侧向位置</div>
+    <div class="cell_title">凹坑尺寸</div>
+    <div class="cell_title">长度：</div>
     <div class="weui-cells">
-        <div class="weui-cell weui-cell_select">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">  
             <div class="weui-cell__bd">
-                <select class="weui-select" name="select1">
-                    <option selected="" value="0">请选择</option>
-                    <option value="1">翼肋和梁搭接处</option>
-                    <option value="2">翼肋和蒙皮搭接处</option>
+                <input class="weui-input" type="number" id="length" placeholder="请输入长度">
+            </div>
+            <div class="weui-cell__hd">
+                <select class="weui-select" id="select-length">
+                    <option value="1">毫米（mm）</option>
+                    <option value="2">英寸（inch）</option>
                 </select>
             </div>
         </div>
     </div>
-    <div class="cell_desc">参考：</div>
-    <img src="./images/stablizer/stab-1.png" width="400px" alt="">
-
-    <div class="cell_title">凹坑尺寸</div>
     <div class="cell_title">宽度：</div>
     <div class="weui-cells">
         <div class="weui-cell weui-cell_select weui-cell_select-after">  
             <div class="weui-cell__bd">
-                <input class="weui-input" type="number" placeholder="请输入尺寸">
+                <input class="weui-input" type="number" id="width" placeholder="请输入宽度">
             </div>
             <div class="weui-cell__hd">
-                <select class="weui-select" name="select1">
-                    <option value="1">厘米</option>
-                    <option value="2">英寸</option>
+                <select class="weui-select" id="select-width">
+                    <option value="1">毫米（mm）</option>
+                    <option value="2">英寸（inch）</option>
                 </select>
             </div>
         </div>
@@ -56,43 +47,95 @@
     <div class="weui-cells">
         <div class="weui-cell weui-cell_select weui-cell_select-after">  
             <div class="weui-cell__bd">
-                <input class="weui-input" type="number" placeholder="请输入尺寸">
+                <input class="weui-input" type="number" id="depth" placeholder="请输入深度">
             </div>
             <div class="weui-cell__hd">
-                <select class="weui-select" name="select2">
-                    <option value="1">厘米</option>
-                    <option value="2">英寸</option>
+                <select class="weui-select" id="select-depth">
+                    <option value="1">毫米（mm）</option>
+                    <option value="2">英寸（inch）</option>
                 </select>
             </div>
         </div>
     </div>
     <div class="cell_desc">参考：</div>
-    <img src="./images/stablizer/stab-2.png" width="400px" alt="">
+    <img src="./images/stablizer/stab-2.png" width="100%" alt="">
 
-    <div class="cell_title">其他条件：</div>
+    <div class="cell_title">满足下列条件：</div>
     <div class="weui-cells weui-cells_form">
         <div class="weui-cell weui-cell_switch">
             <div class="weui-cell__bd">铆钉无拉伸、变形、缺失</div>
             <div class="weui-cell__ft">
-                <input class="weui-switch" type="checkbox">
+                <input class="weui-switch" id="no-pulled" type="checkbox">
             </div>
         </div>
         <div class="weui-cell weui-cell_switch">
             <div class="weui-cell__bd">无尖锐折痕、沟槽</div>
             <div class="weui-cell__ft">
-                <input class="weui-switch" type="checkbox">
+                <input class="weui-switch" id="no-cracks" type="checkbox">
             </div>
         </div>
     </div>
 
     <div class="weui-btn-area">
-        <a class="weui-btn weui-btn_primary" href="javascript:" id="confirm">确定</a>
+        <a class="weui-btn weui-btn_primary" href="javascript:"  id="checkBtn">检查结果</a>
     </div>
-
-    <div class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
-        <span class="weui-loadmore__tips"></span>
-    </div>
-
+    <div id="dialogs">
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area0-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">AREA0</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area1-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">AREA1</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area2-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">AREA2</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area3-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">AREA3</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area4-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">AREA4</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        </div>
     <div class="">
         <div class="weui-footer">
             <p class="weui-footer__links">
@@ -102,7 +145,8 @@
             <p class="weui-footer__text">Copyright &copy; 2018 山航青岛维修基地</p>
         </div>
     </div>
-
-        
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/stab-on-rib.2.js"></script>
+    <script src="./js/weui.min.js"></script>
 </body>
 </html>
