@@ -2,8 +2,10 @@
 $(function(){
 
     var $area0Dialog = $('#area0-dialog');
-    var $area1Dialog = $('#area1-dialog');
-    var $area2Dialog = $('#area2-dialog');
+    var $area1GoodDialog = $('#area1-good-dialog');
+    var $area1BadDialog = $('#area1-bad-dialog');
+    var $area2GoodDialog = $('#area2-good-dialog');
+    var $area2BadDialog = $('#area2-bad-dialog');
     var $area3Dialog = $('#area3-dialog');
     var $area4Dialog = $('#area4-dialog');
     
@@ -38,10 +40,18 @@ $(function(){
         console.log("长度："+$length+"英寸\n宽度："+$width+"英寸\n深度："+$depth+"英寸");
         if(($length>=0&&$length<=3)&&($depth<=0.01*$length+0.05)){
             console.log("AREA1");
-            $area1Dialog.fadeIn(200);
+            if($width/$depth >=30){
+                $area1GoodDialog.fadeIn(200);
+            }else{
+                $area1BadDialog.fadeIn(200);
+            }   
         }else if((($length>3&&$length<=6)&&($depth<=1/150*$length+0.06))||(($length>6&&$length<=8)&&($depth<=0.1))){
             console.log("AREA2");
-            $area2Dialog.fadeIn(200);
+            if($width/$depth >=30){
+                $area2GoodDialog.fadeIn(200);
+            }else{
+                $area2BadDialog.fadeIn(200);
+            }  
         }else if( (($length>=0&&$length<=2)&&($depth<=0.5)) || (($length>2&&$length<=6)&&($depth <= (7-$length)/10) )){
             console.log("AREA3");
             $area3Dialog.fadeIn(200);

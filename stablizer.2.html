@@ -76,6 +76,9 @@
         </div>
     </div>
 
+    <div class="cell_desc">参考：</div>
+    <img src="./images/stablizer/stab-4.png" width="100%" alt="">
+
     <div class="weui-btn-area">
         <a class="weui-btn weui-btn_primary" href="javascript:"  id="checkBtn">检查结果</a>
     </div>
@@ -84,51 +87,73 @@
         <div class="js_dialog" id="area0-dialog" style="opacity: 0; display: none;">
             <div class="weui-mask"></div>
             <div class="weui-dialog">
-                <div class="weui-dialog__bd">AREA0</div>
+                <div class="weui-dialog__bd">超标</div>
                 <div class="weui-dialog__ft">
                     <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
                 </div>
             </div>
         </div>
         <!--END dialog0-->
-        <!--BEGIN dialog0-->
-        <div class="js_dialog" id="area1-dialog" style="opacity: 0; display: none;">
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="area1-good-dialog" style="opacity: 0; display: none;">
             <div class="weui-mask"></div>
             <div class="weui-dialog">
-                <div class="weui-dialog__bd">AREA1</div>
+                <div class="weui-dialog__bd">位于AREA1，且符合标准，可以直接办理允许损伤</div>
                 <div class="weui-dialog__ft">
                     <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
                 </div>
             </div>
         </div>
-        <!--END dialog0-->
-        <!--BEGIN dialog0-->
-        <div class="js_dialog" id="area2-dialog" style="opacity: 0; display: none;">
+        <!--END dialog1-->
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="area1-bad-dialog" style="opacity: 0; display: none;">
             <div class="weui-mask"></div>
             <div class="weui-dialog">
-                <div class="weui-dialog__bd">AREA2</div>
+                <div class="weui-dialog__bd">位于AREA1，但不符合标准，需要依据51-70-01填充凹坑</div>
                 <div class="weui-dialog__ft">
                     <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
                 </div>
             </div>
         </div>
-        <!--END dialog0-->
-        <!--BEGIN dialog0-->
+        <!--END dialog1-->
+        <!--BEGIN dialog2-->
+        <div class="js_dialog" id="area2-good-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA2，如果可以在5000飞行小时或18个月内可以修复，办理允许损伤</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog2-->
+        <!--BEGIN dialog2-->
+        <div class="js_dialog" id="area2-bad-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA2，但不符合标准，需要依据51-70-01填充凹坑</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog2-->
+        <!--BEGIN dialog3-->
         <div class="js_dialog" id="area3-dialog" style="opacity: 0; display: none;">
             <div class="weui-mask"></div>
             <div class="weui-dialog">
-                <div class="weui-dialog__bd">AREA3</div>
+                <div class="weui-dialog__bd">位于AREA3，需要做以下处理，才可以办理保留：<br/>1.依据51-70-01填补凹坑<br/>使用3M-436胶带密封<br/>3.每400飞行小时检查一次，5000飞行小时或者18个月永久修复</div>
                 <div class="weui-dialog__ft">
                     <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
                 </div>
             </div>
         </div>
-        <!--END dialog0-->
+        <!--END dialog3-->
         <!--BEGIN dialog0-->
         <div class="js_dialog" id="area4-dialog" style="opacity: 0; display: none;">
             <div class="weui-mask"></div>
             <div class="weui-dialog">
-                <div class="weui-dialog__bd">AREA4</div>
+                <div class="weui-dialog__bd">位于AREA4，需要做以下处理，才可以办理保留：</div>
                 <div class="weui-dialog__ft">
                     <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
                 </div>
