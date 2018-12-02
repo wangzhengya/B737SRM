@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/weui.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <title>垂直安定面允许损失标准</title>
+</head>
+<body>
+    <div class="hd">
+        <h2 class="page_title">垂直安定面</h1>
+        <p class="page_desc">允许损伤标准</p>
+    </div>
+
+    <div class="cell_title">凹坑尺寸</div>
+    <div class="cell_title">长度：</div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">  
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" id="length" placeholder="请输入长度">
+            </div>
+            <div class="weui-cell__hd">
+                <select class="weui-select" id="select-length">
+                    <option value="1">毫米（mm）</option>
+                    <option value="2">英寸（inch）</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="cell_title">宽度：</div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">  
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" id="width" placeholder="请输入宽度">
+            </div>
+            <div class="weui-cell__hd">
+                <select class="weui-select" id="select-width">
+                    <option value="1">毫米（mm）</option>
+                    <option value="2">英寸（inch）</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="cell_title">深度：</div>
+    <div class="weui-cells">
+        <div class="weui-cell weui-cell_select weui-cell_select-after">  
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" id="depth" placeholder="请输入深度">
+            </div>
+            <div class="weui-cell__hd">
+                <select class="weui-select" id="select-depth">
+                    <option value="1">毫米（mm）</option>
+                    <option value="2">英寸（inch）</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="cell_desc">参考：</div>
+    <img src="./images/stablizer/stab-2.png" width="100%" alt="">
+
+    <div class="cell_title">满足下列条件：</div>
+    <div class="weui-cells weui-cells_form">
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">铆钉无拉伸、变形、缺失</div>
+            <div class="weui-cell__ft">
+                <input class="weui-switch" id="no-pulled" type="checkbox">
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_switch">
+            <div class="weui-cell__bd">无尖锐折痕、沟槽</div>
+            <div class="weui-cell__ft">
+                <input class="weui-switch" id="no-cracks" type="checkbox">
+            </div>
+        </div>
+    </div>
+
+    <div class="cell_desc">参考：</div>
+    <img src="./images/stablizer/stab-4.png" width="100%" alt="">
+
+    <div class="weui-btn-area">
+        <a class="weui-btn weui-btn_primary" href="javascript:"  id="checkBtn">检查结果</a>
+    </div>
+    <div id="dialogs">
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area0-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">超标</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="area1-good-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA1，且符合标准，可以直接办理允许损伤</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog1-->
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="area1-bad-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA1，但不符合标准，需要依据51-70-01填充凹坑</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog1-->
+        <!--BEGIN dialog2-->
+        <div class="js_dialog" id="area2-good-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA2，如果可以在5000飞行小时或18个月内可以修复，办理允许损伤</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog2-->
+        <!--BEGIN dialog2-->
+        <div class="js_dialog" id="area2-bad-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA2，但不符合标准，需要依据51-70-01填充凹坑</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog2-->
+        <!--BEGIN dialog3-->
+        <div class="js_dialog" id="area3-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA3，需要做以下处理，才可以办理保留：<br/>1.依据51-70-01填补凹坑<br/>使用3M-436胶带密封<br/>3.每400飞行小时检查一次，5000飞行小时或者18个月永久修复</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog3-->
+        <!--BEGIN dialog0-->
+        <div class="js_dialog" id="area4-dialog" style="opacity: 0; display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">位于AREA4，需要做以下处理，才可以办理保留：</div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog0-->
+        </div>
+    <div class="">
+        <div class="weui-footer">
+            <p class="weui-footer__links">
+                <a href="javascript:void(0);" class="weui-footer__link">仅供参考</a>
+                <a href="javascript:void(0);" class="weui-footer__link">请以手册内容为准</a>
+            </p>
+            <p class="weui-footer__text">Copyright &copy; 2018 山航青岛维修基地</p>
+        </div>
+    </div>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/stab-on-rib.2.js"></script>
+    <script src="./js/weui.min.js"></script>
+</body>
+</html>
